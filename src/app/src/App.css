@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,172 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+/* Google Font (optional if you import it in index.html) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f4f6;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+.App {
+  max-width: 850px;
+  margin: 60px auto;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.08),
+    0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+/* Section Headings */
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+/* Give spacing between list section and form */
+
+.App > div:first-child {
+  margin-bottom: 50px;
+}
+
+/* Todo List */
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  transition: all .25s ease;
+  font-size: 16px;
+}
+
+li::before {
+  content: "✓";
+  width: 30px;
+  height: 30px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, .12);
+}
+
+/* Empty state */
+
+li:first-child:last-child {
+  justify-content: center;
+}
+
+/* Error */
+
+p {
+  margin-bottom: 18px;
+}
+
+p[style] {
+  background: #fef2f2;
+  color: #dc2626 !important;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Form */
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #374151;
+}
+
+input {
+  width: 100%;
+  padding: 15px 18px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  transition: .25s;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37,99,235,.15);
+}
+
+/* Button */
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+}
+
+button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Loading */
+
+.App p:not([style]) {
+  color: #6b7280;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .App {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
   }
 }
